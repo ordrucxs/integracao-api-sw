@@ -13,7 +13,7 @@ const Home = async () => {
   return (
     <div className="container grid sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-8">
       {peoples?.results.map((item: any) => (
-        <Link href={'/peopleDetail/${item.id}'} key={item.id}>
+        <Link href={`/peopleDetail/${item.id}`} key={item.id}>
         <div className="item">
           <img src="https://picsum.photos/400/300" alt="" />
           <div>
