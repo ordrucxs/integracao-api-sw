@@ -18,8 +18,8 @@ const Filmes = async () => {
         <div className="item" key={item.id}>
           <img src="https://wallpaperaccess.com/full/2564207.jpg" alt="" />
           <h2>{item.name}</h2>
-          <p>Criação: {item.created}</p>
           <p>Diretor: {item.director}</p>
+          <p>Criação: {item.created}</p>
           <p>Data de edição: {item.edited}</p>
         </div>
       ))}
