@@ -5,9 +5,7 @@
 
 @layer base {
     body {
-        @apply bg-black text-white; /* Cores do tema */
-        font-family: 'Star Jedi', sans-serif; /* Fonte do Google Fonts que lembra Star Wars */
-        @apply text-xl; /* Aumenta o tamanho do texto em toda a página */
+        @apply bg-black text-white font-sans text-xl; /* Cores do tema e tamanho do texto */
     }
 }
 

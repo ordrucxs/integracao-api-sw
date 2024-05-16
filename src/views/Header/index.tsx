@@ -1,3 +1,4 @@
+// Header.js
 import Link from "next/link";
 import Image from 'next/image'; 
 
@@ -16,9 +17,8 @@ const Header = () => {
       <Link href="/navesestelares" className="hover:text-white font-starwars transition-colors duration-300 text-yellow-500">NAVES ESTELARES</Link>
     </header>
     <footer className="w-full bg-space py-4 px-4 text-center text-gray-300">
-    Desenvolvido por <a href="
-https://www.linkedin.com/in/pedro-bernardo-401147219?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="underline hover:text-yellow-500">Pedro Luiz</a> | <a href="https://github.com/ordrucxs" target="_blank" rel="noopener noreferrer" className="underline hover:text-yellow-500">GitHub</a>
-  </footer>
+      Desenvolvido por <a href="https://www.linkedin.com/in/pedro-bernardo-401147219?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="underline hover:text-yellow-500">Pedro Luiz</a> | <a href="https://github.com/ordrucxs" target="_blank" rel="noopener noreferrer" className="underline hover:text-yellow-500">GitHub</a>
+    </footer>
   </>
   );
 };

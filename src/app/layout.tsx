@@ -1,3 +1,4 @@
+
 import Header from "@/views/Header";
 import "./globals.css";
 
@@ -13,9 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-space text-white">
         <Header/>
-        <main className="px-4 py-8 w-full min-h-screen bg-space text-white">{children}</main> {/* Cor de fundo ajustada para representar o universo de Star Wars */}
+        <main className="px-4 py-8 w-full min-h-screen">{children}</main> {/* Cor de fundo ajustada para representar o universo de Star Wars */}
       </body>
     </html>
   );
