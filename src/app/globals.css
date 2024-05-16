@@ -1,31 +1,33 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
     body {
-      @apply bg-gray-100 text-gray-800;
-    };
-  };
-  
-  @layer components {
+        @apply bg-black text-white; /* Cores do tema */
+        font-family: 'Star Jedi', sans-serif; /* Fonte do Google Fonts que lembra Star Wars */
+        @apply text-xl; /* Aumenta o tamanho do texto em toda a página */
+    }
+}
+
+@layer components {
     .container {
-      @apply max-w-7xl mx-auto p-8;
-    };
+        @apply max-w-7xl mx-auto p-8;
+    }
     h2 {
-      @apply font-bold text-2xl;
-    };
+        @apply font-semibold text-3xl; /* Alterado para uma fonte um pouco mais grossa e maior */
+    }
     .item {
-      @apply bg-white rounded-lg
+        @apply bg-gray-800 rounded-lg; /* Cores mais escuras para destacar o conteúdo */
     }
     .item img {
-      @apply w-full h-48 object-cover rounded-t-lg;
-    };
+        @apply w-full h-48 object-cover rounded-t-lg;
+    }
     .item > div {
-      @apply p-6;
-    };
+        @apply p-6;
+    }
     p {
-      @apply mt-4 mb-3;
-    };
-  
-  };
+        @apply mt-3 mb-2 text-lg; /* Alterado para uma fonte um pouco mais grossa */
+    }
+}

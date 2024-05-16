@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { API_BASE_URL } from "@/utils";
 
 const getPeoplesList = async () => {
@@ -10,12 +9,12 @@ const getPeoplesList = async () => {
 }
 const Home = async () => {
   const peoples = await getPeoplesList();
+  console.log(" ~file: index.tsx:12 ~ home ~ peoples:", peoples);
   return (
     <div className="container grid sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-8">
       {peoples?.results.map((item: any) => (
-        <Link href={`/peopleDetail/${item.id}`} key={item.id}>
-        <div className="item">
-          <img src="https://picsum.photos/400/300" alt="" />
+        <div className="item" key={item.id}>
+          <img src="https://wallpaperaccess.com/full/317811.jpg" alt="" />
           <div>
             <h2>{item.name}</h2>
             <p>Altura: {item.height}</p>
@@ -27,7 +26,6 @@ const Home = async () => {
             <p>Genêro: {item.gender}</p>
           </div>
         </div>
-        </Link>
       ))}
     </div>
   );

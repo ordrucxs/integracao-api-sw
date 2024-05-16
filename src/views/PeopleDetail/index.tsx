@@ -1,18 +1,36 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import Link from "next/link";
 import { API_BASE_URL } from "@/utils";
 
-const getPeopleDetail = async (id: number) => {
-  const res = await fetch(`${API_BASE_URL}/people/${id}`, {cache: 'no-store'});
-  if (!res.ok) {
-    throw new Error("A força não está do nosso lado");
-  }
-  return res.json();
+
+interface PeopleDetailProps {
+  params: {
+    id: number;
+  };
 }
 
-const PeopleDetail = async ({ params }: { params: { id: number } }) => {
-    const peopleDetail = await getPeopleDetail(params.id); // Esperar pela resolução da Promise
-    return <div> <h2>{peopleDetail?.name}</h2> </div>;
+interface PeopleDetailResponse {
+  name: string;
+
+}
+const getPeopleDetail = async (id: number): Promise<PeopleDetailResponse> => {
+  try {
+    const res = await fetch(`${API_BASE_URL}/people/${id}`);
+    if (!res.ok) {
+      throw new Error(`Failed to fetch person with id ${id}`);
+    }
+    return res.json();
+  } catch (error: any) {
+    throw new Error(`Failed to fetch person details: ${error.message}`);
+  }
+}
+
+
+
+const PeopleDetail: FunctionComponent<PeopleDetailProps> = async ({ params }) => {
+  const { id } = params;
+  const peopleDetail = await getPeopleDetail(params.id);
+  return <div> <h2>{peopleDetail?.name}</h2> </div>;
 };
 
 export default PeopleDetail;
